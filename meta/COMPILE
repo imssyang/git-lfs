@@ -1,0 +1,43 @@
+
+❯ env | grep GO
+GOROOT=/opt/go
+GOPATH=/opt/go/my
+GOBIN=/opt/go/my/bin
+
+❯ go get github.com/git-lfs/git-lfs
+❯ cd /opt/go/my/src/github.com/git-lfs/git-lfs
+
+❯ http_proxy=socks5://127.0.0.1:1080 make
+go: downloading golang.org/x/sync v0.0.0-20181221193216-37e7f081c4d4
+go: downloading github.com/rubyist/tracerx v0.0.0-20170927163412-787959303086
+go: downloading github.com/olekukonko/ts v0.0.0-20171002115256-78ecb04241c0
+go: downloading github.com/git-lfs/wildmatch v1.0.4
+go: downloading github.com/git-lfs/gitobj/v2 v2.0.0
+go: downloading github.com/git-lfs/go-netrc v0.0.0-20180525200031-e0e9ca483a18
+go: downloading github.com/pkg/errors v0.0.0-20170505043639-c605e284fe17
+go: downloading github.com/stretchr/testify v1.5.1
+go: downloading golang.org/x/net v0.0.0-20191027093000-83d349e8ac1a
+go: downloading github.com/spf13/cobra v0.0.3
+go: downloading github.com/dpotapov/go-spnego v0.0.0-20190506202455-c2c609116ad0
+go: downloading github.com/git-lfs/go-ntlm v0.0.0-20190401175752-c5056e7fa066
+go: downloading github.com/pmezard/go-difflib v1.0.0
+go: downloading gopkg.in/yaml.v2 v2.2.8
+go: downloading github.com/ssgelm/cookiejarparser v1.0.1
+go: downloading github.com/davecgh/go-spew v1.1.1
+go: downloading gopkg.in/jcmturner/gokrb5.v5 v5.3.0
+go: downloading github.com/mattn/go-isatty v0.0.4
+go: downloading github.com/spf13/pflag v1.0.3
+go: downloading golang.org/x/text v0.3.0
+go: downloading github.com/hashicorp/go-uuid v1.0.1
+go: downloading github.com/jcmturner/gofork v1.0.0
+go: downloading gopkg.in/jcmturner/dnsutils.v1 v1.0.1
+go: downloading golang.org/x/crypto v0.0.0-20190426145343-a29dc8fdc734
+go: downloading gopkg.in/jcmturner/aescts.v1 v1.0.1
+go: downloading gopkg.in/jcmturner/rpc.v0 v0.0.2
+git-lfs: skipping fmt, no goimports found at `goimports` ...
+go generate github.com/git-lfs/git-lfs/commands
+GOOS= GOARCH= go build -ldflags=" -X github.com/git-lfs/git-lfs/config.GitCommit=80c80b69 -s -w " -gcflags="all=-trimpath="$HOME" " -asmflags="all=-trimpath="$HOME"" -trimpath -o ./bin/git-lfs ./git-lfs.go
+
+cp /opt/go/my/src/github.com/git-lfs/git-lfs/bin/git-lfs /opt/git-lfs/bin
+
+

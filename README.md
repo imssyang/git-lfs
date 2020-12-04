@@ -1,2 +1,2 @@
-# git-lfs
-/opt/git-lfs
+
+git-lfs
